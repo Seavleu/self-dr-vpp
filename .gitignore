@@ -2,30 +2,16 @@
 .env
 .env.*
 
-# Ignore data folders
-data/
-datasets/
-logs/
-output/
-results/
+**/*.csv
+**/*.json
+**/data/
+**/sandbox*
+.env
+**/*.ipynb_checkpoints/
 
-# Ignore Python cache files
-__pycache__/
-*.py[cod]
+**/*.pth
+**/*.png
+**/__pycache__/
+**/mlruns/
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore system files
-.DS_Store
-Thumbs.db
-
-# Ignore IDE specific files
-.vscode/
-.idea/
-*.swp
-
-# Ignore build files
-build/
-dist/
-*.egg-info/
+**/*.pkl
