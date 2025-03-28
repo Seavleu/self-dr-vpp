@@ -1,17 +1,21 @@
 # Ignore environment variable files
 .env
-.env.*
 
 **/*.csv
 **/*.json
 **/data/
-**/sandbox*
-.env
+
 **/*.ipynb_checkpoints/
 
 **/*.pth
 **/*.png
 **/__pycache__/
-**/mlruns/
 
 **/*.pkl
+
+data/raw/
+data/processed/
+data/synthesis/
+data/interim/ 
+docs/*.png
+
