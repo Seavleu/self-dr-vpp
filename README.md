@@ -45,7 +45,7 @@ Develop a modular and scalable VPP system integrating Self-DR, AI-driven ESS opt
     - Central system aggregates forecasts, optimization results, and blockchain transactions to balance supply, demand, and grid stability.
     
 - **User Interfaces & APIs:**
-    - Offers real-time monitoring and control via web or mobile dashboards.
+    - Offers real-time monitoring and control via web or mobile dashboards(Future Phase).
 
 ---
 
@@ -67,13 +67,13 @@ Develop a modular and scalable VPP system integrating Self-DR, AI-driven ESS opt
     Develop LSTM and Transformer models using historical and weather data.  
     (Quick PoC: Use Keras/TensorFlow with a simple LSTM network.)
 - **Smart Contract Module (Claim 3):**  
-    Write and deploy Solidity smart contracts on a test network (e.g., Ganache).
+    Write and deploy Solidity smart contracts on a test network (Ganache).
 - **ESS Optimization Module (Claim 4):**  
-    Build a simulation environment (e.g., with OpenAI Gym) and implement a DQN agent.
+    Build a simulation environment (OpenAI Gym) and implement a DQN agent.
 - **Wholesale/Retail Trading Optimization Module (Claim 5):**  
-    Develop an optimization engine with AI/optimization libraries (e.g., CVXPY).
+    Develop an optimization engine with AI/optimization libraries (CVXPY).
 - **Integration (Claim 1):**  
-    Integrate modules with APIs (using Flask or FastAPI) to manage aggregated operations.
+    Integrate modules with APIs (Flask/FastAPI) to manage aggregated operations.
 
 ### Phase 4: Integration, Testing, and Validation (2–3 Weeks)
 - Integrate modules and simulate end-to-end system scenarios.
@@ -88,11 +88,11 @@ Develop a modular and scalable VPP system integrating Self-DR, AI-driven ESS opt
 
 ## 4. Tools, Technologies, and Frameworks
 
-- **AI/ML:** Python, TensorFlow/Keras (or PyTorch), scikit-learn.
-- **Reinforcement Learning:** OpenAI Gym, Stable-Baselines3.
+- **AI/ML:** Python, PyTorch, scikit-learn.
+- **Reinforcement Learning:** OpenAI Gym (Stable-Baselines3).
 - **Blockchain:** Solidity, Remix IDE, Ganache.
-- **Web/API:** Flask or FastAPI.
-- **Data Storage:** SQLite or NoSQL solutions.
+- **Web/API:** Flask/FastAPI.
+- **Data Storage:** SQLite or NoSQL.
 - **Version Control:** Git.
 
 ---
@@ -113,8 +113,8 @@ Develop a modular and scalable VPP system integrating Self-DR, AI-driven ESS opt
 
 ## Project Structure
 
-project_root/  
-│  
+self-dr-vpp/  
+│ 
 ├── README.md                  # Project overview and setup instructions  
 ├── requirements.txt           # Project dependencies  
 ├── .env                       # Environment variables (for sensitive API keys, etc.)  
