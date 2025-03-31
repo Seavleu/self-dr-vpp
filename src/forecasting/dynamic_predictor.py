@@ -7,14 +7,14 @@ from sklearn.metrics import confusion_matrix, classification_report
 
 def dynamic_thresholds(values, base_thresholds=None, dynamic_factor=0.1):
     """
-    Compute dynamic thresholds based on the distribution of recent demand values.
-    For example, thresholds can be adjusted by a factor of the standard deviation.
+    Compute dynamic thresholds based on the distribution of recent demand value
+    For example, thresholds can be adjusted by a factor of the standard deviation
 
     Parameters:
-        values (array-like): Array of demand values in kW.
-        base_thresholds (dict): Base thresholds with keys 'low' and 'moderate'. 
-                                 Defaults to {'low': 1.5, 'moderate': 3.5}.
-        dynamic_factor (float): Factor to adjust thresholds based on std deviation.
+        values (array-like): Array of demand values in kW
+        base_thresholds (dict): Base thresholds with keys 'low' and 'moderate'
+                                 Defaults to {'low': 1.5, 'moderate': 3.5}
+        dynamic_factor (float): Factor to adjust thresholds based on std deviation
 
     Returns:
         dict: New thresholds.
@@ -24,7 +24,7 @@ def dynamic_thresholds(values, base_thresholds=None, dynamic_factor=0.1):
     values = np.array(values)
     std_val = np.std(values)
     
-    # Adjust thresholds dynamically
+    # adjust thresholds dynamically
     new_thresholds = {
         'low': base_thresholds['low'] + dynamic_factor * std_val,
         'moderate': base_thresholds['moderate'] + dynamic_factor * std_val
@@ -33,7 +33,7 @@ def dynamic_thresholds(values, base_thresholds=None, dynamic_factor=0.1):
 
 def classify_demand_dynamic(value, thresholds):
     """
-    Classify a single demand value based on dynamic thresholds.
+    classify a single demand value based on dynamic thresholds
     """
     if value < thresholds['low']:
         return 'Low'
@@ -62,18 +62,7 @@ def apply_dynamic_classification(values, base_thresholds=None, dynamic_factor=0.
 
 def evaluate_demand_classification_dynamic(actual, predicted, base_thresholds=None, dynamic_factor=0.1, plot=True):
     """
-    Evaluate the dynamic classification of predicted vs. actual demand values.
-    
-    Parameters:
-        actual (array-like): Actual consumption values (kW).
-        predicted (array-like): Predicted consumption values (kW).
-        base_thresholds (dict): Base thresholds for classification.
-        dynamic_factor (float): Factor for dynamic adjustment.
-        plot (bool): Whether to produce a count plot of predicted categories.
-    
-    Returns:
-        tuple: (confusion matrix, classification report string, used thresholds)
-    """
+    Evaluate the dynamic classification of predicted vs. actual demand values """
     actual_labels, thresholds = apply_dynamic_classification(actual, base_thresholds, dynamic_factor)
     predicted_labels, _ = apply_dynamic_classification(predicted, base_thresholds, dynamic_factor)
     
