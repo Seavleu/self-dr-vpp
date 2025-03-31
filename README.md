@@ -126,7 +126,7 @@ self-dr-vpp/
 │   └── synthetic/  
 │  
 ├── notebooks/                 # Jupyter notebooks for experiments and EDA  
-│   ├── forecasting/  
+│   ├── forecasting/global_active_power_consumption_of_household.ipynb 
 │   ├── optimization/  
 │   └── trading/  
 │  

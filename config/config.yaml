@@ -1,0 +1,43 @@
+experiment:
+  name: lstm_power_forecast_v1
+
+data:
+  look_back: 24
+  train_size: 200000
+  test_size: 50000
+  subset_for_cv: 300000
+  n_splits: 3
+
+model:
+  units1: 64
+  units2: 32
+  dropout1: 0.2
+  dropout2: 0.2
+
+train:
+  batch_size: 64
+  epochs: 20
+  validation_split: 0.1
+
+save:
+  model_path: models/lstm_model_v1.h5
+  scaler_path: models/scaler_v1.pkl
+  history_path: models/history_v1.json
+  logs_path: logs/lstm_power_forecast_v1.log
+  tensorboard_log_dir: logs/tensorboard/lstm_power_forecast_v1
+  checkpoint_path: models/checkpoints/lstm_power_forecast_v1
+  best_model_path: models/best_model/lstm_power_forecast_v1.weights.h5
+  best_model_metric: val_loss
+  best_model_metric_mode: min
+  best_model_metric_threshold: 0.01
+  best_model_metric_early_stopping: 5
+  best_model_metric_save_best_only: True
+  best_model_metric_save_weights_only: True
+  best_model_metric_save_freq: 'epoch'
+
+simulation:
+  demand_thresholds:
+    low: 1.5
+    moderate: 3.5
+  dynamic_factor: 0.1
+  supply_tolerance: 0.1
